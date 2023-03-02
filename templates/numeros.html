@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="" method="POST">
+    <label for="txtNumeros" class="label-form">
+        No. de cajas de texto
+    </label>
+    <input type="number" name="txtNumeros" id="txtNumeros">
+    <br>
+    <input type="submit" value="Mandar">
+</form>
+<div {{oculto}}>
+    <form action="/valores" method="post">
+        <div class="container-fluid ">
+            <div class="row-fluid">
+                {% for num in range(numero) %}
+                <label for="txtNum">
+                    N{{num}}
+                </label>
+                <input type="number" name="txtNum" id="txtNum">
+                {%endfor%}
+            </div>
+            <input type="submit" value="Mandar valores">
+        </div>
+    </form>
+</div>
+{% endblock %}
