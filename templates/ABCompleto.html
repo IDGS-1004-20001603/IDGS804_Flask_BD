@@ -1,0 +1,31 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="container">
+    <div class="row">
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for student in alumnos%}
+                <tr>
+                    <th>{{student.nombre}}</th>
+                    <th>{{student.apaterno}}</th>
+                    <th>{{student.email}}</th>
+                    <th><a href="eliminar?id={{student.id}}" class="btn btn-danger"><i class="icon-remove icon-white">
+                            </i> Eliminar </a></th>
+                    <th><a href="modificar?id={{student.id}}" class="btn btn-warning"><i class="icon-pencil icon-white">
+                            </i> Modificar </a></th>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+{%endblock%}
